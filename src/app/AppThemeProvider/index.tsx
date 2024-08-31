@@ -12,8 +12,8 @@ export const AppThemeProvider = ({ children, theme }: AppThemeProviderProps) => 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <LocalizationProvider dateAdapter={AdapterDateFns}>{children}</LocalizationProvider>
+      {children}
+      {/* <LocalizationProvider dateAdapter={AdapterDateFns}>{children}</LocalizationProvider> */}
     </ThemeProvider>
   );
 };

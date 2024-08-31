@@ -1,8 +1,19 @@
 import { RecursivePartial } from "@/common/utils";
 
+
+type header = {
+    color: string;
+};
+type footer = {
+    textColor: string;
+};
+
 interface BaseThemeExtension{};
 
-interface ThemeExtension extends BaseThemeExtension{};
+interface ThemeExtension extends BaseThemeExtension{
+    header: header;
+    footer: footer;
+};
 
 declare module "@mui/material/styles" {
     interface Theme extends BaseThemeExtension {}
