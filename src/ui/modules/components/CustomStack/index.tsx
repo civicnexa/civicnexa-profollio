@@ -5,5 +5,5 @@ interface CustomStackProps extends StackProps {
 };
 
 export const CustomStack = ({ direction = "row", ...props }: CustomStackProps) => {
-  return <Stack alignItems="center" {...props} direction={direction} />;
+  return <Stack {...props} direction={direction} />;
 };

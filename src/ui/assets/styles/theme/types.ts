@@ -1,17 +1,14 @@
 import { RecursivePartial } from "@/common/utils";
 
 
-type header = {
-    color: string;
-};
 type footer = {
     textColor: string;
+    socialColor: string;
 };
 
 interface BaseThemeExtension{};
 
 interface ThemeExtension extends BaseThemeExtension{
-    header: header;
     footer: footer;
 };
 

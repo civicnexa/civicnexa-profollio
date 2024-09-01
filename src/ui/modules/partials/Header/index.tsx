@@ -59,9 +59,10 @@ export function Header(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar sx={{ padding: "0px !important" }}>
           <CustomStack
            justifyContent={"space-between"}
+           alignItems={"center"}
            sx={{
             width: '100%',
             margin: {
@@ -82,7 +83,7 @@ export function Header(props: Props) {
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
               {navItems.map((item) => (
                 <StyledLink href={"#"} key={item} sx={{ 
-                  color: (theme) => theme.header.color,
+                  color: (theme) => theme.palette.secondary.main,
                   mx: 1,
                 }}>
                   {item}

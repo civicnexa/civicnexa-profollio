@@ -1,7 +1,8 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import { Header } from "@/ui/modules/partials/Header";
+import { Layout } from "@/ui/modules/partials";
+import { Typography } from "@mui/material";
 
 export default function Home() {
-  return <Header />;
+  return <Layout>
+      <Typography variant="h1">CIVICNEXA DIGITAL SOLUTIONS</Typography>
+    </Layout>;
 }

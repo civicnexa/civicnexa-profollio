@@ -9,6 +9,9 @@ const baseTheme = createTheme({
         primary: {
             main: "#0B1029",
         },
+        secondary: {
+            main: "#8A8C99",
+        },
         background: {
             default: "#FFFFFF",
         },
@@ -16,11 +19,9 @@ const baseTheme = createTheme({
     typography: {
         fontFamily: 'Outfit, sans-serif',
     },
-    header: {
-        color: "#8A8C99",
-    },
     footer: {
         textColor: "#A1A4B2",
+        socialColor: "#CDCFD6",
     },
 });
 
