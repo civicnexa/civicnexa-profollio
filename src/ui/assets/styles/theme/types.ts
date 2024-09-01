@@ -6,10 +6,16 @@ type footer = {
     socialColor: string;
 };
 
+type general = {
+    sectionTitle: string;
+    color: string;
+};
+
 interface BaseThemeExtension{};
 
 interface ThemeExtension extends BaseThemeExtension{
     footer: footer;
+    general: general;
 };
 
 declare module "@mui/material/styles" {

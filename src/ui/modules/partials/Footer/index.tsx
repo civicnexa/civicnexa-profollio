@@ -25,7 +25,7 @@ export function Footer () {
                 color: (theme) => theme.palette.background.default,
             }}
         >
-            <Grid size={{xs :5}} alignSelf={"center"}>
+            <Grid size={{md :5}} alignSelf={"center"}>
                 <StyledLink href="#">
                     <CustomStack spacing={1.5}>
                         <AppLogo />
@@ -68,7 +68,7 @@ export function Footer () {
                 }}
                 >Iusto quia perspiciatis inventore tempora. Velit vitae tempora et laborum id soluta est ut laboriosam. Eveniet possimus autem ratione aliquid in sunt tempora. Amet rerum suscipit distinctio voluptas.</Typography>
             </Grid>
-            <Grid size={{xs : 4}} alignSelf={"center"}>
+            <Grid size={{md : 4}} alignSelf={"center"}>
                 <CustomStack direction='row' spacing={7}>
                     <CustomStack direction='column' spacing={3}>
                         <FooterLinks link="About Us" href="#"/>
@@ -82,7 +82,7 @@ export function Footer () {
                     </CustomStack>
                 </CustomStack>
             </Grid>
-            <Grid size={{xs : 3}} alignSelf={"start"} alignItems={"end"} justifySelf={"center"}>
+            <Grid size={{md : 3}} alignSelf={"start"} alignItems={"end"} justifySelf={"center"}>
                 <CustomStack spacing={"19px"} 
                  alignItems={"end"}
                 sx={{

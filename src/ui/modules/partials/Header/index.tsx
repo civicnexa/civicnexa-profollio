@@ -59,7 +59,13 @@ export function Header(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar sx={{ padding: "0px !important" }}>
+        <Toolbar 
+         sx={{ 
+          padding: { 
+            lg: "0px !important",
+          } 
+          }}
+        >
           <CustomStack
            justifyContent={"space-between"}
            alignItems={"center"}

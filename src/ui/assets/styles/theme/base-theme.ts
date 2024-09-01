@@ -16,6 +16,10 @@ const baseTheme = createTheme({
             default: "#FFFFFF",
         },
     },
+    general: {
+        sectionTitle: "#737580",
+        color: "#070A1C",
+    },
     typography: {
         fontFamily: 'Outfit, sans-serif',
     },

@@ -13,11 +13,13 @@ export const Layout = ({
   return (
     <Box>
         <Header />
-        <Box 
-         sx={{ 
-          minHeight: '100vh', 
-          minWidth: "100vw" 
-        }}>{children}</Box>
+        <Box
+         sx={{
+          minWidth: "100vw",
+          minHeight: '100vh',
+          paddingBottom: "100px",
+         }}
+        >{children}</Box>
         <Footer />
     </Box>
   )
