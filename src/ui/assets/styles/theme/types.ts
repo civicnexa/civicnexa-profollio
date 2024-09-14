@@ -10,6 +10,7 @@ type general = {
     sectionTitle: string;
     color: string;
     darkColor: string;
+    btnBg: string;
 };
 
 interface BaseThemeExtension{

@@ -1,6 +1,5 @@
-import { CustomStack } from '@/ui/modules/components/CustomStack'
 import React from 'react'
-import { SectionTitle } from '../../components'
+import { PageSubtitles, SectionTitle } from '../../components'
 import { Box, Typography, useTheme } from '@mui/material'
 import { pxToRem } from '@/common/utils'
 import aboutImg from './ui/assets/images/about-image.png';
@@ -36,25 +35,7 @@ export function AboutSection() {
             }}>
             <Box>
                 <SectionTitle title="About Us" />
-                <Typography
-                sx={{
-                    color: (theme) => theme.general.color,
-                    fontFamily: (theme) => theme.typography.fontFamily,
-                    fontWeight: 600,
-                    fontSize: {
-                        xxs: pxToRem(24),
-                        xs: pxToRem(14),
-                        sm: pxToRem(18),
-                        md: pxToRem(20),
-                        lg: pxToRem(24),
-                    },
-                    lineHeight: {
-                        xxs: "31.2px",
-                        xs: "20px",
-                        sm: "31.2px",
-                    },
-                }}
-                >We deliver innovative digital solutions to individuals, business and organisations across Africa and beyond.</Typography>
+                <PageSubtitles subtitle='We deliver innovative digital solutions to individuals, business and organisations across Africa and beyond.' />
             </Box>
             <Box
              sx={{

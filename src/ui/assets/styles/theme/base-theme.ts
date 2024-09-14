@@ -30,6 +30,7 @@ export const baseTheme = createTheme({
         sectionTitle: "#737580",
         color: "#070A1C",
         darkColor: "#2E2F33",
+        btnBg: "#1E2D70",
     },
     typography: {
         fontFamily: 'Outfit, sans-serif',
