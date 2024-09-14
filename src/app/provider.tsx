@@ -1,5 +1,5 @@
 "use client";
-import { defaultTheme } from '@/ui/assets/styles';
+import { baseTheme } from '@/ui/assets/styles';
 import React, { PropsWithChildren } from 'react'
 import { AppThemeProvider } from './AppThemeProvider';
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
@@ -7,7 +7,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 export function Provider({ children}: PropsWithChildren) {
   return (
     <AppRouterCacheProvider>
-      <AppThemeProvider theme={defaultTheme}>
+      <AppThemeProvider theme={baseTheme}>
         {children}
       </AppThemeProvider>
     </AppRouterCacheProvider>

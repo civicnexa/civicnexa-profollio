@@ -19,8 +19,10 @@ export function Footer () {
             alignContent="center"
             justifyContent="space-between"
             sx={{
-                maxWidth: '100vw',
-                padding: '70px 100px',
+                maxWidth: '100%',
+                padding: {
+                    lg: '70px 100px',
+                },
                 background: (theme) => theme.palette.primary.main,
                 color: (theme) => theme.palette.background.default,
             }}

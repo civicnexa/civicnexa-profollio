@@ -1,22 +1,39 @@
 import { CustomStack } from '@/ui/modules/components/CustomStack'
 import React from 'react'
 import { SectionTitle } from '../../components'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, useTheme } from '@mui/material'
 import { pxToRem } from '@/common/utils'
 import aboutImg from './ui/assets/images/about-image.png';
 import { StyledImage } from '@/ui/modules/components'
+import Grid from '@mui/material/Grid2';
 
 export function AboutSection() {
+    const theme = useTheme();
   return (
-    <CustomStack direction={{
-        xs: 'column',
-        sm: 'row',
-        }} spacing={3}
-        sx={{
-            padding: "40px 20px",
-        }}
+    <Grid container
+     spacing={{
+        xxs: 2,
+        md: 3,
+        lg: 0
+     }}
+     alignItems={"center"}
+     justifyContent={{
+        xs: "space-between",
+        xl: "center"
+    }}
+     sx={{
+        padding: {
+            xxs: "40px 20px",
+            xs: "50px 70px",
+            sm: "70px 100px",
+            md: "96px 130px",
+            lg: "96px 160px",
+        },
+     }}
     >
-        <CustomStack direction='column' spacing={3}>
+        <Grid size={{ 
+            xs: 6, sm: 6, 
+            }}>
             <Box>
                 <SectionTitle title="About Us" />
                 <Typography
@@ -24,24 +41,85 @@ export function AboutSection() {
                     color: (theme) => theme.general.color,
                     fontFamily: (theme) => theme.typography.fontFamily,
                     fontWeight: 600,
-                    fontSize: pxToRem(24),
-                    lineHeight: "31.2px",
+                    fontSize: {
+                        xxs: pxToRem(24),
+                        xs: pxToRem(14),
+                        sm: pxToRem(18),
+                        md: pxToRem(20),
+                        lg: pxToRem(24),
+                    },
+                    lineHeight: {
+                        xxs: "31.2px",
+                        xs: "20px",
+                        sm: "31.2px",
+                    },
                 }}
                 >We deliver innovative digital solutions to individuals, business and organisations across Africa and beyond.</Typography>
             </Box>
-            <Box>
-                <StyledImage src={aboutImg} alt="About Us" width={500} height={500} />
+            <Box
+             sx={{
+                marginTop: {
+                    xxs: "24px",
+                    xs: "15px",
+                    lg: "20px"
+                },
+                width: {
+                    xs: "100%",
+                    sm: "400px",
+                    md: "500px",
+                    lg: "640px"
+                },
+                height: {
+                    xs: "auto",
+                    // sm: "200px",
+                    md: "400px"
+                },
+             }}
+            >
+                <StyledImage src={aboutImg} alt="About Us" width={500} height={500}
+                 sx={{
+                    width: "100%",
+                    height: "100%",
+                 }}
+                />
             </Box>
-        </CustomStack>
-        <Typography>
-            CivicNexa Digital Solutions is a leading software development company in Nigeria, dedicated to transforming Africa{" "}s digital landscape. We specialize in custom software, responsive web and mobile applications, and expert software consulting. Our team works closely with clients to deliver innovative solutions tailored to their specific needs.
-            <br />
-            <br />
-            Our mission is to leverage cutting-edge technologies to help businesses thrive in the digital age. We focus on quality, reliability, and customer satisfaction, ensuring our clients stay competitive and efficient in a rapidly evolving market.
-            <br />
-            <br />
-            Our mission is to leverage cutting-edge technologies to help businesses thrive in the digital age. We focus on quality, reliability, and customer satisfaction, ensuring our clients stay competitive and efficient in a rapidly evolving market.
-        </Typography>
-    </CustomStack>
+        </Grid>
+        <Grid size={{ 
+            xs: 6, sm:5.5, md: 5, 
+            lg: 4.5, xl:5
+        }}
+        alignSelf={"center"}
+         sx={{
+            marginTop: {
+                xs: "30px",
+                sm: "50px",
+                md: "100px"
+            },
+         }}
+        >
+            <Typography
+             sx={{
+                color: (theme) => theme.general.darkColor,
+                fontSize: {
+                    xs: pxToRem(12),
+                    sm: pxToRem(14),
+                    md: pxToRem(16),
+                },
+                fontFamily: (theme) => theme.typography.fontFamily,
+                fontWeight: 300,
+                lineHeight: {
+                    // xs: "15px",
+                    sm: "22.4px",
+                },
+             }}
+            >
+                CivicNexa Digital Solutions is a leading software development company in Nigeria, dedicated to transforming Africa{" "}s digital landscape. We specialize in custom software, responsive web and mobile applications, and expert software consulting. Our team works closely with clients to deliver innovative solutions tailored to their specific needs.
+                <br /><br />
+                Our mission is to leverage cutting-edge technologies to help businesses thrive in the digital age. We focus on quality, reliability, and customer satisfaction, ensuring our clients stay competitive and efficient in a rapidly evolving market.
+                <br /><br />
+                At CivicNexa, we turn physical efforts into digital breakthroughs. Let{" "}s build a better digital future together
+            </Typography>
+        </Grid>
+    </Grid>
   )
 }

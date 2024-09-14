@@ -9,25 +9,27 @@ type footer = {
 type general = {
     sectionTitle: string;
     color: string;
+    darkColor: string;
 };
 
-interface BaseThemeExtension{};
-
-interface ThemeExtension extends BaseThemeExtension{
+interface BaseThemeExtension{
     footer: footer;
     general: general;
 };
 
+
 declare module "@mui/material/styles" {
+    interface BreakpointOverrides {
+        xxs: true;
+        xs: true;
+        sm: true;
+        md: true;
+        lg: true;
+        xl: true;
+      }
     interface Theme extends BaseThemeExtension {}
   
     interface ThemeOptions extends RecursivePartial<BaseThemeExtension> {}
-}
-
-declare module "@mui/material/styles" {
-    interface Theme extends ThemeExtension {}
-
-    interface ThemeOptions extends ThemeExtension {}
 }
 
 export {};

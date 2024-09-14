@@ -72,8 +72,8 @@ export function Header(props: Props) {
            sx={{
             width: '100%',
             margin: {
-              xs: 0,
-              sm: '0 auto',
+              xxs: 0,
+              xs: '0 auto',
               md: "0 70px",
               lg: "0 100px",
             },
@@ -82,11 +82,11 @@ export function Header(props: Props) {
             <Typography
               variant="h6"
               component="div"
-              sx={{ display: { xs: 'block' } }}
+              sx={{ display: { xxs: 'block' } }}
             >
               <AppLogo />
             </Typography>
-            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Box sx={{ display: { xxs: 'none', xs: 'block' } }}>
               {navItems.map((item) => (
                 <StyledLink href={"#"} key={item} sx={{ 
                   color: (theme) => theme.palette.secondary.main,
@@ -99,8 +99,8 @@ export function Header(props: Props) {
             <AppButton
              sx={{
               display: {
-                xs: 'none',
-                sm: 'block',
+                xxs: 'none',
+                xs: 'block',
               },
               borderRadius: "20px",
              }}
@@ -110,7 +110,7 @@ export function Header(props: Props) {
               aria-label="open drawer"
               edge="end"
               onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: 'none' } }}
+              sx={{ mr: 2, display: { xs: 'none' } }}
             >
               <MenuIcon />
             </IconButton>
@@ -127,7 +127,7 @@ export function Header(props: Props) {
             keepMounted: true,
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
+            display: { xxs: 'block', xs: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
