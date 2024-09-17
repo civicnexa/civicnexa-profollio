@@ -12,10 +12,15 @@ type general = {
     darkColor: string;
     btnBg: string;
 };
-
+type accordion = {
+    accordionSummaryColor:string,
+    accordionTextColor:string,
+  
+}
 interface BaseThemeExtension{
     footer: footer;
     general: general;
+    accordion:accordion;
 };
 
 

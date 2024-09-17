@@ -24,6 +24,11 @@ export function ServiceSection() {
         justifyContent: 'start',
         background: (theme) => theme.palette.primary.main,
         color: (theme) => theme.palette.background.default,
+        fontSize: {
+          xs: pxToRem(12),
+          sm: pxToRem(14),
+          md: pxToRem(16),
+      },
     
       }}
     >
@@ -67,7 +72,7 @@ export function ServiceSection() {
           marginTop: {
             xs: "30px",
             sm: "50px",
-            md: "30px",
+            md: "100px",
           },
           width: '100%', // Ensure this spans the full width of the parent container
     
