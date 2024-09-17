@@ -58,10 +58,10 @@ export function AboutSection() {
              }}
             >
                 <StyledImage src={aboutImg} alt="About Us" width={500} height={500}
-                 sx={{
-                    width: "100%",
-                    height: "100%",
-                 }}
+                //  sx={{
+                //     width: "100%",
+                //     height: "100%",
+                //  }}
                 />
             </Box>
         </Grid>
