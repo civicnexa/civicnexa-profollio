@@ -17,10 +17,14 @@ type accordion = {
     accordionTextColor:string,
   
 }
+type contact = {
+    contactBtn:string
+}
 interface BaseThemeExtension{
     footer: footer;
     general: general;
     accordion:accordion;
+    contact:contact;
 };
 
 

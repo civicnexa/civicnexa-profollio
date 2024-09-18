@@ -18,6 +18,7 @@ export const baseTheme = createTheme({
         mode: "light",
         primary: {
             main: "#0B1029",
+           
         },
         secondary: {
             main: "#8A8C99",
@@ -31,6 +32,7 @@ export const baseTheme = createTheme({
         color: "#070A1C",
         darkColor: "#2E2F33",
         btnBg: "#1E2D70",
+        
     },
     typography: {
         fontFamily: 'Outfit, sans-serif',
@@ -39,6 +41,9 @@ export const baseTheme = createTheme({
         accordionSummaryColor:'#B8BBCC',
         accordionTextColor:'#A1A4B2',
      
+    },
+    contact:{
+        contactBtn:'#626C9B',
     },
     footer: {
         textColor: "#A1A4B2",
