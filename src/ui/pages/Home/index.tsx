@@ -1,7 +1,8 @@
 "use client";
 import { Layout } from '@/ui/modules/partials'
 import React from 'react'
-import { AboutSection, ContactSection, Projects, ServiceSection } from './ui/blocks'
+import { AboutSection, ContactSection, Projects, ServiceSection,TeamSection, TestimonialSection} from './ui/blocks'
+
 
 export function Home () {
   return (
@@ -9,7 +10,11 @@ export function Home () {
       <AboutSection />
       <Projects />
       <ServiceSection/>
+      <TeamSection/>
+      <TestimonialSection/>
       <ContactSection/>
+      
+      
     </Layout>
   )
 }
