@@ -16,15 +16,16 @@ export const Layout = ({
   return (
     <ReactLenis root>
       <Box>
-          <Header />
-          <Box
-          sx={{
-            minWidth: "100vw",
-            minHeight: '100vh',
-            paddingBottom: "100px",
-          }}
-          >{children}</Box>
-          <Footer />
+        <Header />
+        <Box
+        sx={{
+          overflow: "hidden",
+          minWidth: "100vw",
+          minHeight: '100vh',
+          paddingBottom: "100px",
+        }}
+      >{children}</Box>
+        <Footer />
       </Box>
     </ReactLenis>
   )

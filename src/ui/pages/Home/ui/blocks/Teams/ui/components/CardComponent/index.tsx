@@ -3,12 +3,12 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CustomStack } from '@/ui/modules/components/CustomStack';
-import projectImg from '../../assets/images/projectImg.png';
+import teamImg from '../../assets/images/Team1.jpg';
 import { StyledImage } from '@/ui/modules/components';
 import { Box } from '@mui/material';
 import { pxToRem } from '@/common/utils';
 import { AppButton } from '@/ui/modules/components/AppButton';
-import { ArrowForward } from '@mui/icons-material';
+import { ArrowRightAlt } from '@mui/icons-material';
 
 
 export function CardComponent() {
@@ -25,42 +25,38 @@ export function CardComponent() {
         <Box
          sx={{
             width: "100%",
-            height: "140px",
+            height: "200px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            gap:'10px'
          }}
         >
-            <StyledImage src={projectImg} alt="project photo" width={30} height={30} sx={{ width: "50%", height: "50%",  margin: "auto" }} />
+            <StyledImage src={teamImg} alt="team photo"  sx={{ width: "100%", height: "100%",  margin: "auto" }} />
         </Box>
-        <CustomStack direction={"column"}>
+        <CustomStack>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="span"
+                <Typography gutterBottom variant="h5" component="p"
                  sx={{
                     fontSize: pxToRem(18),
-                    fontWeight: 500,
+                    fontWeight: 600,
                     lineHeight: "24px",
                     color: (theme) => theme.general.darkColor,
                  }}
                 >
-                X-Kart Racing Series
+               Saka Akeem Ayopelumi
                 </Typography>
-            </CardContent>
-            <CardActions>
-                <AppButton size="small"
+                <Typography gutterBottom  component="p"
                  sx={{
-                    // width: "100%",
-                    background: (theme) => theme.general.btnArrowBg,
-                    color: (theme) => theme.palette.background.default,
-                    borderRadius: "30px"
+                    fontSize: pxToRem(14),
+                    lineHeight: "14px",
+                    color: (theme) => theme.general.darkColor,
                  }}
                 >
-                    <CustomStack justifyContent={"space-between"} spacing={2}>
-                        {/* <Typography component="span">View</Typography> */}
-                        <ArrowForward />
-                    </CustomStack>
-                </AppButton>
-            </CardActions>
+               Product Designer
+                </Typography>
+            </CardContent>
+           
         </CustomStack>
       </Card>
     )

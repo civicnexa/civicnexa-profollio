@@ -12,12 +12,11 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import { StyledLink } from '../../components';
 import { AppLogo } from '../../components/AppLogo';
-import { Grid2 } from '@mui/material';
 import { CustomStack } from '../../components/CustomStack';
 import { AppButton } from '../../components/AppButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 interface Props {
   /**
@@ -61,10 +60,9 @@ export function Header(props: Props) {
       <AppBar component="nav">
         <Toolbar 
          sx={{ 
-          padding: { 
-            lg: "0px !important",
-          } 
-          }}
+          padding: "0px !important"
+
+        }}
         >
           <CustomStack
            justifyContent={"space-between"}
@@ -122,7 +120,7 @@ export function Header(props: Props) {
           container={container}
           variant="temporary"
           open={mobileOpen}
-          onClose={handleDrawerToggle}
+          // onClose={handleDrawerToggle}
           ModalProps={{
             keepMounted: true,
           }}
@@ -131,12 +129,13 @@ export function Header(props: Props) {
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
           }}
         >
+          <CloseIcon onClick={handleDrawerToggle}/>
           {drawer}
         </Drawer>
       </nav>
-      <Box component="main" sx={{ p: 3 }}>
+      {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-      </Box>
+      </Box> */}
     </Box>
   );
 }

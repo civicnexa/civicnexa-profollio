@@ -89,6 +89,7 @@ export function Footer () {
                  alignItems={"end"}
                 sx={{
                     float:{ lg: "right" },
+                    
                 }} 
                 >
                     <FooterExternalLink icon={instagram} href="#" name="Instagram"/>
