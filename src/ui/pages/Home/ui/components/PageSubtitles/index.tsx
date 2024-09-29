@@ -1,5 +1,6 @@
-import { pxToRem } from "@/common/utils";
+import { pxToRem, transition } from "@/common/utils";
 import { Typography, useTheme } from "@mui/material";
+import { motion } from "framer-motion";
 
 type PageSubtitlesProps = {
     subtitle: string;
@@ -11,6 +12,9 @@ export function PageSubtitles({
 }: PageSubtitlesProps) {
     const theme = useTheme();
     return <Typography
+      component={motion.div}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0, transition: transition }}
     sx={{
         color: color || theme.general.color,
         fontFamily: theme.typography.fontFamily,

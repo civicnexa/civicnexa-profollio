@@ -8,7 +8,6 @@ import { ButtonGroup } from "@/ui/modules/components/CarouselCustomComponent";
 import { responsive } from "@/common/utils";
 
 
-
 export function Projects() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalItems = 5;

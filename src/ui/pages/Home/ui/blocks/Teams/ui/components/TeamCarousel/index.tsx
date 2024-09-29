@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { CardComponent } from "../CardComponent";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { AppButton } from "@/ui/modules/components/AppButton";
 import { Box } from '@mui/material';
 import { ButtonGroup } from '@/ui/modules/components/CarouselCustomComponent';
 import { responsive } from '@/common/utils';
@@ -30,7 +29,7 @@ export function TeamCarousel() {
   };
 
 return (
-  <Box sx={{ position: 'relative' }}>
+  <Box>
      <Carousel responsive={responsive} 
              ssr={true} infinite={true}
              autoPlay={true}

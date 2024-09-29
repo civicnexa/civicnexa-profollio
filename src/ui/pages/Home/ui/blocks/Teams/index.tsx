@@ -68,6 +68,7 @@ export  function TeamSection() {
      
       <Box
         sx={{
+          position: "relative",
           marginTop: {
             xs: "30px",
             sm: "50px",

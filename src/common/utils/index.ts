@@ -58,3 +58,6 @@ export const responsive = {
   }
 };
 
+export const transition = {
+  delay: 0.3, ease: "easeInOut"
+}
