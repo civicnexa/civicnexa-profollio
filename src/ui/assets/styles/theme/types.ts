@@ -11,6 +11,7 @@ type general = {
     color: string;
     darkColor: string;
     btnBg: string;
+    btnArrowBg: string;
 };
 type accordion = {
     accordionSummaryColor:string,

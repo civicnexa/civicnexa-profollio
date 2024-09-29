@@ -51,7 +51,8 @@ export function Hero() {
                             md: pxToRem(68),
                         },
                         lineHeight: {
-                            sm: "40px",
+                            xss: "40px",
+                            sm: "70px",
                             md: "95.2px",
                         },
                         textAlign: "center"

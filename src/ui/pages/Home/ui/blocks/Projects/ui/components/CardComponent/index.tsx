@@ -8,7 +8,7 @@ import { StyledImage } from '@/ui/modules/components';
 import { Box } from '@mui/material';
 import { pxToRem } from '@/common/utils';
 import { AppButton } from '@/ui/modules/components/AppButton';
-import { ArrowRightAlt } from '@mui/icons-material';
+import { ArrowForward } from '@mui/icons-material';
 
 
 export function CardComponent() {
@@ -33,7 +33,7 @@ export function CardComponent() {
         >
             <StyledImage src={projectImg} alt="project photo" width={30} height={30} sx={{ width: "50%", height: "50%",  margin: "auto" }} />
         </Box>
-        <CustomStack>
+        <CustomStack direction={"column"}>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="span"
                  sx={{
@@ -49,15 +49,15 @@ export function CardComponent() {
             <CardActions>
                 <AppButton size="small"
                  sx={{
-                    width: "100%",
-                    background: (theme) => theme.general.btnBg,
+                    // width: "100%",
+                    background: (theme) => theme.general.btnArrowBg,
                     color: (theme) => theme.palette.background.default,
                     borderRadius: "30px"
                  }}
                 >
                     <CustomStack justifyContent={"space-between"} spacing={2}>
-                        <Typography component="span">View</Typography>
-                        <ArrowRightAlt />
+                        {/* <Typography component="span">View</Typography> */}
+                        <ArrowForward />
                     </CustomStack>
                 </AppButton>
             </CardActions>

@@ -27,6 +27,7 @@ export function PageSubtitles({
             xs: "20px",
             sm: "31.2px",
         },
+        marginBottom: "40px"
     }}
     >{subtitle}</Typography>
 }

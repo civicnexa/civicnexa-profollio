@@ -32,6 +32,7 @@ export const baseTheme = createTheme({
         color: "#070A1C",
         darkColor: "#2E2F33",
         btnBg: "#1E2D70",
+        btnArrowBg: "#525566",
         
     },
     typography: {
