@@ -59,15 +59,6 @@ export function ContactSection() {
         <SectionTitle title="What can we do for you" />
       <ButtonUsage/>
       <InputUsage/>
-   <Box sx={{width:'100%', display:'flex', alignItems:'flex-end',justifyContent:'flex-end'}}>
-   <AppButton sx={{border:'1px solid #A1A4B2', borderRadius:'25px', marginTop:'24px', cursor:'pointer', marginLeft:'15px',  backgroundColor: (theme) => theme.contact.contactBtn, color: (theme) => theme.palette.background.default,
-    transition: 'background-color 0.3s',
-    '&:hover': {
-      backgroundColor: 'transparent ',
-      color:  (theme) => theme.contact.contactBtn,
-    },}}>SEND</AppButton>
-   </Box>
-   
      </Box>
       <Box
         sx={{
@@ -90,7 +81,7 @@ export function ContactSection() {
       >
         <Box sx={{marginBottom:'20px'}}>
         <SectionTitle title="Phone" />
-        <PageSubtitles subtitle='+234 (0) 7016650549'/>
+        <PageSubtitles subtitle='+234 7016650549'/>
         </Box>
        <Box>
        <SectionTitle title="Email" />

@@ -1,5 +1,13 @@
 import { RecursivePartial } from "@/common/utils";
 
+type PrimaryBtn = {};
+
+type PrimaryContained = {};
+
+type ButtonType = {
+    primary: PrimaryBtn;
+    contained: PrimaryContained;
+}
 
 type footer = {
     textColor: string;
@@ -13,6 +21,10 @@ type general = {
     btnBg: string;
     btnArrowBg: string;
 };
+type Color = {
+    error: string;
+};
+
 type accordion = {
     accordionSummaryColor:string,
     accordionTextColor:string,
@@ -26,6 +38,8 @@ interface BaseThemeExtension{
     general: general;
     accordion:accordion;
     contact:contact;
+    color: Color;
+    button: ButtonType;
 };
 
 
