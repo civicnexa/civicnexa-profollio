@@ -1,15 +1,22 @@
 import React from 'react'
 import { PageSubtitles, SectionTitle } from '../../components'
-import { Box, Typography, useTheme } from '@mui/material'
-import { pxToRem } from '@/common/utils'
+import { Box, Typography } from '@mui/material'
+import { pxToRem, transition } from '@/common/utils'
 import aboutImg from './ui/assets/images/about-image.png';
 import { StyledImage } from '@/ui/modules/components'
 import Grid from '@mui/material/Grid2';
+import { AnimationScope, motion } from 'framer-motion';
 
-export function AboutSection() {
-    const theme = useTheme();
+type AboutSectionProps = {
+    scope: AnimationScope<any>;
+};
+
+export function AboutSection({
+    scope
+}: AboutSectionProps) {
+
   return (
-    <Grid container
+    <Grid container ref={scope}
      spacing={{
         xxs: 2,
         md: 3,
@@ -32,7 +39,11 @@ export function AboutSection() {
     >
         <Grid size={{ 
             xs: 6, sm: 6, 
-            }}>
+            }}
+            component={motion.div}
+            initial={{ opacity: 0, x: -300 }}
+            whileInView={{ opacity: 1, x: 0, transition: transition }}
+        >
             <Box>
                 <SectionTitle title="About Us" />
                 <PageSubtitles subtitle='We deliver innovative digital solutions to individuals, business and organisations across Africa and beyond.' />
@@ -69,6 +80,9 @@ export function AboutSection() {
             xs: 6, sm:5.5, md: 5, 
             lg: 4.5, xl:5
         }}
+        component={motion.div}
+        initial={{ opacity: 0, y: 150 }}
+        whileInView={{ opacity: 1, y: 0, transition: transition }}
         alignSelf={"center"}
          sx={{
             marginTop: {
