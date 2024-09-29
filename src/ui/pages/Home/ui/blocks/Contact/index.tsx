@@ -81,7 +81,7 @@ export function ContactSection() {
       >
         <Box sx={{marginBottom:'20px'}}>
         <SectionTitle title="Phone" />
-        <PageSubtitles subtitle='+234 (0) 7016650549'/>
+        <PageSubtitles subtitle='+234 7016650549'/>
         </Box>
        <Box>
        <SectionTitle title="Email" />

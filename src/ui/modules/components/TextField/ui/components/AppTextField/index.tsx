@@ -12,7 +12,8 @@ export type AppTextFieldProps = TextFieldProps & {
   };
 
 const styles = {
-    width: "100%"
+    width: "100%",
+    margin: "10px"
 };
 
 export function AppTextField(props: AppTextFieldProps) {

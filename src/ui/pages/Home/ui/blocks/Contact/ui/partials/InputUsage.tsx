@@ -55,6 +55,8 @@ export default function InputUsage() {
           type="message"
           name="message"
           label="Message" 
+          multiline
+          rows={4}
         />
         <Box sx={{width:'100%', display:'flex', alignItems:'flex-end',justifyContent:'flex-end'}}>
           <AppButton 
