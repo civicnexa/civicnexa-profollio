@@ -38,6 +38,9 @@ export const baseTheme = createTheme({
     typography: {
         fontFamily: 'Outfit, sans-serif',
     },
+    color: {
+        error: "#df0000",
+    },
     accordion:{
         accordionSummaryColor:'#B8BBCC',
         accordionTextColor:'#A1A4B2',
@@ -49,6 +52,16 @@ export const baseTheme = createTheme({
     footer: {
         textColor: "#A1A4B2",
         socialColor: "#CDCFD6",
+    },
+    button: {
+        primary: {
+            background: "#0B1029",
+            color: "#FFFFFF",
+        },
+        contained: {
+            background: "#FFFFFF",
+            color: "#8A8C99",
+        },
     },
 });
 

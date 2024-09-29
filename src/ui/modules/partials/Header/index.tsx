@@ -101,6 +101,8 @@ export function Header(props: Props) {
                 xs: 'block',
               },
               borderRadius: "20px",
+              background: (theme) => theme.palette.background.default,
+              color: "primary.main"
              }}
             >Start a Project</AppButton>
             <IconButton
