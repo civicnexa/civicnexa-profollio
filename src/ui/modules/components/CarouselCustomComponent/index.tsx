@@ -5,6 +5,8 @@ import { alpha, Box, useTheme } from "@mui/material";
 interface CustomButtonGroupProps {
     next: () => void;
     previous: () => void;
+    sx?:any;
+    topStyle?:any;
     goToSlide: (slide: number) => void;
     carouselState: {
         currentSlide: number;
@@ -12,27 +14,30 @@ interface CustomButtonGroupProps {
     };
 }
 
-export const ButtonGroup: React.FC<CustomButtonGroupProps> = ({ next, previous, ...rest }) => {
+export const ButtonGroup: React.FC<CustomButtonGroupProps> = ({ next, previous,sx, ...rest }) => {
     const theme = useTheme();
     const { carouselState: { currentSlide } } = rest;
     return (
         <Box className="carousel-button-group"
-        sx={{
-            position: "absolute",
-            top: 0,
-            right: "10%",
-            height: "100px",
-            width: "fit-content",
-            display: "flex",
-            alignItems: "center",
-            gap: 4
-        }}
+        sx={
+            // position: "absolute",
+            // top: {
+            //    topStyle
+            // },
+            // right: "0",
+            // height: "100px",
+            // width: "fit-content",
+            // display: "flex",
+            // alignItems: "center",
+            // gap: 4
+            sx
+        }
         >
             <AppButton
             sx={{
                 background: (theme) => theme.general.btnBg,
                 width: ".5rem",
-                height: "4rem",
+                height: "3.5rem",
                 borderRadius: "50%",
                 color: (theme) => theme.palette.background.default,
                 "&:hover": {
@@ -46,7 +51,7 @@ export const ButtonGroup: React.FC<CustomButtonGroupProps> = ({ next, previous, 
             sx={{
                 background: (theme) => theme.general.btnBg,
                 width: ".5rem",
-                height: "4rem",
+                height: "3.5rem",
                 borderRadius: "50%",
                 color: (theme) => theme.palette.background.default,
                 "&:hover": {
