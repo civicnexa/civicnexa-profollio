@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import { AppButton } from "@/ui/modules/components/AppButton";
 import { Box, IconButton } from '@mui/material';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
+import { ButtonGroup } from '@/ui/modules/components';
 // export function TestimonialCarousel() {
 //     interface CustomButtonGroupProps {
 //         next: () => void;
@@ -126,19 +127,53 @@ export function TestimonialCarousel() {
       slidesToSlide: 1,
     }
   };
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const totalItems = 5;
 
+  const handleNext = () => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % totalItems);
+  };
+
+  const handlePrevious = () => {
+      setCurrentSlide((prevSlide) => (prevSlide - 1 + totalItems) % totalItems);
+  };
+
+  const handleGoToSlide = (slide: number) => {
+      setCurrentSlide(slide);
+  };
+
+  const carouselState = {
+      currentSlide,
+      totalItems,
+  };
   return (
     <Box sx={{ position: 'relative', width: '100%' }}>
       <Carousel 
         responsive={responsive} 
-        ssr={true} 
-        infinite={true}
+        ssr={true} infinite={true}
         autoPlay={true}
-        autoPlaySpeed={1000}
+        autoPlaySpeed={4000}
         keyBoardControl={true}
-        swipeable={true}
-        draggable={true}
+        transitionDuration={500}
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
+        customButtonGroup={<ButtonGroup next={handleNext} previous={handlePrevious} sx={{  position: "absolute",
+           top: {
+                xxs:'-20%',
+           md:'35%'
+           },
+           right: {
+               md:'8%',
+               xxs:'-25%'
+           },
+           height: "100px",
+           display: "flex",
+           alignItems: "center",
+           justifyContent:{md:'space-between',xxs:'center'},
+           gap: 4,
+           width:'100%',
+         
+         }} goToSlide={handleGoToSlide} carouselState={carouselState}  />}
+        renderButtonGroupOutside={true}
       >
         {Array.from({ length: 3 }).map((_, index) => (
           <Box

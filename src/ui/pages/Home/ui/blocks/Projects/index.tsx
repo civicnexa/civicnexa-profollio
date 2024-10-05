@@ -51,7 +51,8 @@ export function Projects() {
          sx={{
             padding: "20px 80px",
             marginBottom: "96px",
-            position: "relative"
+            position: "relative",
+       
          }}
         >
             <PageSubtitles subtitle="Projects" />
@@ -65,7 +66,7 @@ export function Projects() {
              customButtonGroup={<ButtonGroup next={handleNext} previous={handlePrevious} sx={{  position: "absolute",
                 top: {
                      xxs:'0%',
-                md:'0%'
+                md:'10%'
                 },
                 right: {
                     md:'10%',
@@ -81,7 +82,16 @@ export function Projects() {
              renderButtonGroupOutside={true}
             >
                 {Array.from({ length: 5}).map((_, index) => (
-                    <CardComponent key={index} />
+                    <Box
+                    key={index}
+                    sx={{
+                      width: '100%', // Make the card occupy full width
+                      height:'100%',
+                      marginTop: '80px', // Add padding around the card
+                    }}
+                  >
+                    <CardComponent />
+                  </Box>
                 ))}
             </Carousel>
         </Box>

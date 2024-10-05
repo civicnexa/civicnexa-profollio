@@ -22,9 +22,13 @@ export function Footer () {
                 maxWidth: '100%',
                 padding: {
                     lg: '70px 100px',
+                    md:'60px',
+                    xxs:'50px 20px'
                 },
                 background: (theme) => theme.palette.primary.main,
                 color: (theme) => theme.palette.background.default,
+              
+               
             }}
         >
             <Grid size={{md :5}} alignSelf={"center"}>

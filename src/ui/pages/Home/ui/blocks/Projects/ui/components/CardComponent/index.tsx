@@ -20,7 +20,7 @@ export function CardComponent() {
                 md: 405,
             },
             fontFamily: (theme) => theme.typography.fontFamily,
-            marginTop:'40px'
+       
         }}
        >
         <Box
