@@ -8,3 +8,8 @@ interface CustomStackProps extends StackProps {
 export const CustomStack = ({ direction = "row", ...props }: CustomStackProps) => {
   return <Stack {...props} direction={direction} />;
 };
+
+
+
+
+;

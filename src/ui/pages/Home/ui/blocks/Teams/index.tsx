@@ -59,6 +59,15 @@ export  function TeamSection() {
               xs: '100%',
               sm: '50%',
             },
+            marginBottom:{
+              xxs:'30px',
+              md:'0'
+            },
+            fontSize: {
+              xs: pxToRem(12),
+              sm: pxToRem(14),
+              md: pxToRem(16),
+          },
             // Add responsive adjustments if needed
           }}
         >
