@@ -38,16 +38,18 @@ export function CardComponent() {
         >
            
         </Box> */}
-        <CustomStack sx={{width:'100%', height:'400px', }} direction={{
+        <CustomStack sx={{width:'100%' }} direction={{
           xxs:'column',
-          md:'row'
+          sm:'row'
         }} >
-
-        <StyledImage src={teamImg} alt="team photo"  sx={{ width: {
-          xxs:'100%',md:'100%'
-        }, height: {
-          xxs:'40%',md:'100%'
-        },  }} />
+            <StyledImage src={teamImg} alt="team photo"  
+            sx={{
+              position: "center", 
+              width: {
+              xxs:'100%',md:'100%'
+            }, height: {
+              xxs:'200px',md:'400px'
+            },  }} />
             <CardContent sx={{width:'100%',background: '#F9FAFC',border:"none",height:'100%'}}>
 
                 <Typography gutterBottom variant="h1" component="p"
