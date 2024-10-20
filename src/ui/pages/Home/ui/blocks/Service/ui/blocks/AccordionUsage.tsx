@@ -1,12 +1,33 @@
 import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-// import AccordionActions from '@mui/material/AccordionActions';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import AccordionComponent from '../components/AccordionComponent';
+import { Box } from '@mui/material';
+
+const data = [
+  {
+    summaryText: "Mobile & Web Application Development",
+    detailedText: "We develop both Mobile App and Web App software solutions, leveraging cutting-edge technologies to address your unique business challenges and drive operational efficiency."
+  },
+  {
+    summaryText: "Maintainance and Upgrades of existing Softwares",
+    detailedText: "We provide continuous support and enhancement services, ensuring that your software remains up-to-date, secure, and optimized for peak performance."
+  },
+  {
+    summaryText: "Graphics Designs",
+    detailedText: "Our creative team delivers visually striking and impactful designs that resonate with your brand identity, helping you stand out in the competitive market."
+  },
+  {
+    summaryText: "UI/UX Design",
+    detailedText: "We craft intuitive and engaging user interfaces and experiences tailored to meet your business goals and user needs, ensuring seamless interaction and aesthetic appeal."
+  },
+  {
+    summaryText: "Software Consultancy",
+    detailedText: "Our expert consultants offer strategic guidance to help you make informed decisions on technology adoption, process improvement, and digital transformation."
+  },
+  {
+    summaryText: "Third Party Contracts",
+    detailedText: " If you've secured a contract but lack the expertise or resources to execute it, we step in to deliver top-tier solutions on your behalf. Our team ensures seamless execution and project management, allowing you to meet your client's expectations while maintaining your business reputation."
+  },
+]
 
 export default function AccordionUsage() {
     // Define unique state for each panel
@@ -18,60 +39,18 @@ export default function AccordionUsage() {
     };
   
     return (
-      <div>
-     
-        <AccordionComponent
-        expanded={expanded === 'panel1'} 
-        onChange={handleChange} 
-        panelId="panel1"
-        summaryText="Mobile & Web Application Development"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={1}
-        
-      />
-        <AccordionComponent
-        expanded={expanded === 'panel2'}
-        onChange={handleChange}
-        panelId="panel2"
-        summaryText="Maintainance and Upgrades of existing Softwares"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={2}
-      />
-         <AccordionComponent
-        expanded={expanded === 'panel3'}
-        onChange={handleChange}
-        panelId="panel3"
-        summaryText="Graphics Designs"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={3}
-      />
-        <AccordionComponent
-        expanded={expanded === 'panel4'}
-        onChange={handleChange}
-        panelId="panel4"
-        summaryText="UI/UX Design"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={4}
-      />
-        <AccordionComponent
-        expanded={expanded === 'panel5'}
-        onChange={handleChange}
-        panelId="panel5"
-        summaryText="Software Consultancy"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={5}
-      />
-        <AccordionComponent
-        expanded={expanded === 'panel6'}
-        onChange={handleChange}
-        panelId="panel6"
-        summaryText="Third Party Contracts"
-        detailsText="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
-        index={6}
-      />
-  
- 
-
-      </div>
+      <Box>
+        {data.map((item,index) => (
+          <AccordionComponent
+            expanded={expanded === `panel${index + 1}`} 
+            onChange={handleChange} 
+            panelId={`panel${index + 1}`}
+            summaryText={item.summaryText}
+            detailsText={item.detailedText}
+            index={index + 1}
+            key={index}
+          />
+        ))}
+      </Box>
     );
   }

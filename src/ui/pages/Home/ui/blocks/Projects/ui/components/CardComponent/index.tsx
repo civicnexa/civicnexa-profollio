@@ -3,15 +3,24 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CustomStack } from '@/ui/modules/components/CustomStack';
-import projectImg from '../../assets/images/projectImg.png';
-import { StyledImage } from '@/ui/modules/components';
+import projectImg from '@/ui/pages/Home/ui/blocks/Teams/ui/assets/images/team-img.jpeg';
+import { StyledImage, StyledLink } from '@/ui/modules/components';
 import { Box } from '@mui/material';
 import { pxToRem } from '@/common/utils';
 import { AppButton } from '@/ui/modules/components/AppButton';
 import { ArrowForward } from '@mui/icons-material';
 
+type CardComponentProps = {
+    name: string;
+    link: string;
+    img?: any
+};
 
-export function CardComponent() {
+export function CardComponent({
+    name,
+    link,
+    img
+}: CardComponentProps) {
     return (
       <Card 
         sx={{ 
@@ -32,7 +41,7 @@ export function CardComponent() {
             justifyContent: "center"
          }}
         >
-            <StyledImage src={projectImg} alt="project photo" width={30} height={30} sx={{ width: "50%", height: "50%",  margin: "auto" }} />
+            <StyledImage src={img} alt="project photo" width={30} height={30} sx={{  }} />
         </Box>
         <CustomStack direction={"column"}>
             <CardContent>
@@ -44,7 +53,7 @@ export function CardComponent() {
                     color: (theme) => theme.general.darkColor,
                  }}
                 >
-                X-Kart Racing Series
+                {name}
                 </Typography>
             </CardContent>
             <CardActions>
@@ -56,10 +65,14 @@ export function CardComponent() {
                     borderRadius: "30px"
                  }}
                 >
-                    <CustomStack justifyContent={"space-between"} spacing={2}>
-                        {/* <Typography component="span">View</Typography> */}
-                        <ArrowForward />
-                    </CustomStack>
+                    <StyledLink target='_blank'
+                     href={link}
+                    >
+                        <CustomStack justifyContent={"space-between"} spacing={2}>
+                            {/* <Typography component="span">View</Typography> */}
+                            <ArrowForward />
+                        </CustomStack>
+                    </StyledLink>
                 </AppButton>
             </CardActions>
         </CustomStack>

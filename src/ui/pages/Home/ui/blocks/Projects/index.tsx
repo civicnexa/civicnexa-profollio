@@ -5,8 +5,20 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
 import { ButtonGroup } from "@/ui/modules/components/CarouselCustomComponent";
-import { responsive } from "@/common/utils";
+import xkartImg from './ui/assets/images/xkart.jpg';
 
+const data = [
+  {
+    name: "X-Kart Racing Series",
+    link: "http://www.xkartrace.com/",
+    img: xkartImg
+  },
+  {
+    name: "Spark by Civicnexa Digital Solutions",
+    link: "#",
+    img: "",
+  },
+]
 
 export function Projects() {
     const responsive = {
@@ -49,7 +61,10 @@ export function Projects() {
     return(
         <Box
          sx={{
-            padding: "20px 80px",
+            padding: {
+              xxs: "20px 16px",
+              sm: "20px 80px"
+            },
             marginBottom: "96px",
             position: "relative",
        
@@ -57,8 +72,9 @@ export function Projects() {
         >
             <PageSubtitles subtitle="Projects" />
             <Carousel responsive={responsive} 
-             ssr={true} infinite={true}
-             autoPlay={true}
+             ssr={true} 
+            //  infinite={true}
+            //  autoPlay={true}
              autoPlaySpeed={4000}
              keyBoardControl={true}
              transitionDuration={500}
@@ -81,7 +97,7 @@ export function Projects() {
               }} goToSlide={handleGoToSlide} carouselState={carouselState}  />}
              renderButtonGroupOutside={true}
             >
-                {Array.from({ length: 5}).map((_, index) => (
+                {data.map((item, index) => (
                     <Box
                     key={index}
                     sx={{
@@ -90,7 +106,7 @@ export function Projects() {
                       marginTop: '80px', // Add padding around the card
                     }}
                   >
-                    <CardComponent />
+                    <CardComponent img={item.img} link={item.link} name={item.name} />
                   </Box>
                 ))}
             </Carousel>

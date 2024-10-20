@@ -21,8 +21,8 @@ export function Footer () {
             sx={{
                 maxWidth: '100%',
                 padding: {
-                    lg: '70px 100px',
-                    md:'60px',
+                    md: '30px 100px',
+                    // md:'60px',
                     xxs:'50px 20px'
                 },
                 background: (theme) => theme.palette.primary.main,
@@ -31,8 +31,8 @@ export function Footer () {
                
             }}
         >
-            <Grid size={{md :5}} alignSelf={"center"}>
-                <StyledLink href="#">
+            <Grid size={{md :5}} alignSelf={"start"}>
+                <StyledLink href="/">
                     <CustomStack spacing={1.5}>
                         <AppLogo />
                         <Box>
@@ -61,18 +61,6 @@ export function Footer () {
                         </Box>
                     </CustomStack>
                 </StyledLink>
-                <Typography
-                sx={{
-                    color: (theme) => theme.footer.textColor,
-                    fontSize: pxToRem(16),
-                    fontWeight: 300,
-                    lineHeight: {  
-                        xs: "24px", 
-                    },
-                    fontFamily: (theme) => theme.typography.fontFamily,
-                    marginTop: '20px',
-                }}
-                >Iusto quia perspiciatis inventore tempora. Velit vitae tempora et laborum id soluta est ut laboriosam. Eveniet possimus autem ratione aliquid in sunt tempora. Amet rerum suscipit distinctio voluptas.</Typography>
             </Grid>
             <Grid size={{md : 4}} alignSelf={"center"}>
                 <CustomStack direction='row' spacing={7}>
@@ -96,9 +84,9 @@ export function Footer () {
                     
                 }} 
                 >
-                    <FooterExternalLink icon={instagram} href="#" name="Instagram"/>
-                    <FooterExternalLink icon={whatsApp} href="#" name="whatsApp"/>
-                    <FooterExternalLink icon={linkedIn} href="#" name="LinkedIn"/>
+                    <FooterExternalLink icon={instagram} href="https://www.instagram.com/civicnexa.ng?igsh=MTVna3Nua3R6eXFtMQ==" name="Instagram"/>
+                    <FooterExternalLink icon={whatsApp} href="https://wa.me/2347016650549" name="whatsApp"/>
+                    <FooterExternalLink icon={linkedIn} href="https://www.linkedin.com/company/civicnexa-digital-solutions/" name="LinkedIn"/>
                 </CustomStack>
             </Grid>
         </Grid>
