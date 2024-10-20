@@ -1,14 +1,10 @@
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CustomStack } from '@/ui/modules/components/CustomStack';
-import teamImg from '../../assets/images/Team1.jpg';
+import teamImg from '../../assets/images/bukky.jpeg';
 import { StyledImage } from '@/ui/modules/components';
-import { Box } from '@mui/material';
 import { pxToRem } from '@/common/utils';
-import { AppButton } from '@/ui/modules/components/AppButton';
-import { ArrowRightAlt } from '@mui/icons-material';
 
 
 export function CardComponent() {
@@ -47,9 +43,11 @@ export function CardComponent() {
               position: "center", 
               width: {
               xxs:'100%',md:'100%'
-            }, height: {
+            },
+             height: {
               xxs:'200px',md:'400px'
-            },  }} />
+            },
+              }} />
             <CardContent sx={{width:'100%',background: '#F9FAFC',border:"none",height:'100%'}}>
 
                 <Typography gutterBottom variant="h1" component="p"
@@ -60,7 +58,7 @@ export function CardComponent() {
                     color: (theme) => theme.general.darkColor,
                  }}
                 >
-              Michael Balogun
+                  Mr Bukky Feyisitan
                 </Typography>
                 <Typography gutterBottom variant="h5" component="p"
                  sx={{
@@ -69,9 +67,9 @@ export function CardComponent() {
                     color: (theme) => theme.general.darkColor,
                  }}
                 >
-               Chief Executive Officer, XKart Racing Series
+                  Principal partner, XKart Racing Promotion.
                 </Typography>
-                <Typography gutterBottom component="p"
+                {/* <Typography gutterBottom component="p"
                  sx={{
                     fontSize: pxToRem(14),
                     lineHeight: "14px",
@@ -80,8 +78,8 @@ export function CardComponent() {
                     width:'90%'
                  }}
                 >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget
-                </Typography>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget
+                </Typography> */}
             </CardContent>
            
         </CustomStack>

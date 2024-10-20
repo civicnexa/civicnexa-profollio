@@ -2,7 +2,7 @@ import React from 'react'
 import { PageSubtitles, SectionTitle } from '../../components'
 import { Box, Typography } from '@mui/material'
 import { pxToRem, transition } from '@/common/utils'
-import aboutImg from './ui/assets/images/about-image.png';
+import aboutImg from './ui/assets/images/civicnexa-about.jpg';
 import { StyledImage } from '@/ui/modules/components'
 import Grid from '@mui/material/Grid2';
 import { AnimationScope, motion } from 'framer-motion';

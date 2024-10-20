@@ -16,7 +16,7 @@ export function WhatButton({
             transition: 'background-color .5s',
             color: "primary.main",
             fontSize: {
-                xxs: pxToRem(10),
+                xxs: pxToRem(8),
                 sm: pxToRem(16),
             }, 
             '&:hover': {
