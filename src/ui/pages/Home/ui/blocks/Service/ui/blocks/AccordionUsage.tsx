@@ -43,11 +43,12 @@ export default function AccordionUsage() {
         {data.map((item,index) => (
           <AccordionComponent
             expanded={expanded === `panel${index + 1}`} 
-          onChange={handleChange} 
-          panelId={`panel${index + 1}`}
-          summaryText={item.summaryText}
-          detailsText={item.detailedText}
-          index={index + 1}
+            onChange={handleChange} 
+            panelId={`panel${index + 1}`}
+            summaryText={item.summaryText}
+            detailsText={item.detailedText}
+            index={index + 1}
+            key={index}
           />
         ))}
       </Box>
