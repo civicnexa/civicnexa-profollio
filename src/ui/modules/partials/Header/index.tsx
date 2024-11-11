@@ -39,7 +39,7 @@ export function Header(props: Props) {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: "start" });
     }
   };
 
@@ -48,7 +48,12 @@ export function Header(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box onClick={handleDrawerToggle} 
+     sx={{ 
+      textAlign: 'center',
+      background: "primary.main" 
+    }}
+    >
         <AppLogo />
       <List>
         {navItems.map((item) => (
@@ -162,6 +167,7 @@ export function Header(props: Props) {
           sx={{
             display: { xxs: 'block', xs: 'none' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            background: "primary.main"
           }}
         >
           <CloseIcon onClick={handleDrawerToggle}/>

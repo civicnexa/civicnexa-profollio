@@ -19,16 +19,7 @@ export function CardComponent({
     href
 }: CardComponentProps) {
     return (
-        <StyledLink
-         href={href || "https://www.linkedin.com/company/civicnexa-digital-solutions/"}
-         target="_blank"
-         sx={{
-            width: {
-                xxs: 353,
-                md: 405,
-            },
-         }}
-        >
+        
             <Card 
                 sx={{ 
                     maxWidth: {
@@ -52,6 +43,16 @@ export function CardComponent({
                 {/* </Box> */}
                 <CustomStack>
                     <CardContent>
+                        <StyledLink
+                            href={href || "https://www.linkedin.com/company/civicnexa-digital-solutions/"}
+                            target="_blank"
+                            sx={{
+                                width: {
+                                    xxs: 353,
+                                    md: 405,
+                                },
+                            }}
+                        >
                         <Typography gutterBottom variant="h5" component="p"
                         sx={{
                             fontSize: pxToRem(18),
@@ -60,7 +61,7 @@ export function CardComponent({
                             color: (theme) => theme.palette.primary.main
                         }}
                         >
-                    {name}
+                            {name}
                         </Typography>
                         <Typography gutterBottom  component="p"
                         sx={{
@@ -69,12 +70,12 @@ export function CardComponent({
                             color: (theme) => theme.general.darkColor,
                         }}
                         >
-                    {position}
+                            {position}
                         </Typography>
+                    </StyledLink>
                     </CardContent>
                 
                 </CustomStack>
             </Card>
-        </StyledLink>
     )
 }

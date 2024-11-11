@@ -3,10 +3,7 @@ import { PageSubtitles, SectionTitle } from '../../components'
 import { Box, useTheme } from '@mui/material'
 import { pxToRem } from '@/common/utils'
 import Grid from '@mui/material/Grid2';
-import { AppButton } from '@/ui/modules/components/AppButton';
-import TextField from '@mui/material/TextField';
 import InputUsage from './ui/partials/InputUsage';
-import ButtonUsage from './ui/partials/ButtonUsage';
 
 
 export function ContactSection() {
@@ -57,7 +54,6 @@ export function ContactSection() {
         
         <PageSubtitles subtitle='Contact us!'/>
         <SectionTitle title="What can we do for you" />
-      <ButtonUsage/>
       <InputUsage/>
      </Box>
       <Box
