@@ -10,8 +10,17 @@ import { FooterExternalLink, FooterLinks } from './ui/components';
 import instagram from './ui/assets/icons/instagram.svg';
 import whatsApp from './ui/assets/icons/whatsApp.svg';
 import linkedIn from './ui/assets/icons/linkedIn.svg';
+import { motion } from 'framer-motion';
+
 
 export function Footer () {
+    const scrollToSection = (sectionId: string) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: "start" });
+        }
+    };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
         <Grid container
@@ -21,7 +30,7 @@ export function Footer () {
             sx={{
                 maxWidth: '100%',
                 padding: {
-                    xxs: "50px 0",
+                    xxs: "50px 16px",
                     md: "100px"
                 },
                 background: (theme) => theme.palette.primary.main,
@@ -32,7 +41,7 @@ export function Footer () {
         >
             <Grid size={{md :5}} alignSelf={"start"}>
                 <StyledLink href="/">
-                    <CustomStack spacing={1.5}>
+                    <CustomStack spacing={1.5} alignItems={"center"}>
                         <AppLogo />
                         <Box>
                             <Typography
@@ -64,14 +73,14 @@ export function Footer () {
             <Grid size={{md : 4}} alignSelf={"center"}>
                 <CustomStack direction='row' spacing={7}>
                     <CustomStack direction='column' spacing={3}>
-                        <FooterLinks link="About Us" href="#"/>
-                        <FooterLinks link="Projects" href="#"/>
-                        <FooterLinks link="What we do" href="#"/>
+                        <FooterLinks link="About Us" onClick={() => scrollToSection(`section2`)} />
+                        <FooterLinks link="Projects" onClick={() => scrollToSection(`section3`)} />
+                        <FooterLinks link="What we do" onClick={() => scrollToSection(`section4`)} />
                     </CustomStack>
                     <CustomStack direction='column' spacing={3}>
-                        <FooterLinks link="Team Members" href="#"/>
-                        <FooterLinks link="Testimonials" href="#"/>
-                        <FooterLinks link="Contact Us" href="#"/>
+                        <FooterLinks link="Team Members" />
+                        <FooterLinks link="Testimonials" />
+                        <FooterLinks link="Contact Us" onClick={() => scrollToSection(`section5`)} />
                     </CustomStack>
                 </CustomStack>
             </Grid>

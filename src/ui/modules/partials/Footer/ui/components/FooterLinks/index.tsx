@@ -1,19 +1,23 @@
 import { pxToRem } from '@/common/utils';
 import { StyledLink } from '@/ui/modules/components'
+import { Box } from '@mui/material';
 import React from 'react'
 
 type FooterLinksProps = {
     link: string,
-    href: string,
+    href?: string,
+    onClick?: () => void,
 };
 
 export function FooterLinks ({
     link,
-    href
+    href,
+    onClick
 }: FooterLinksProps){
-    const Link = href || "#";
-  return <StyledLink 
-   href={Link}
+    // const Link = href || "#";
+  return <Box 
+//    href={Link}
+    component={"span"}
    sx={{
     color: (theme) => theme.palette.secondary.main,
     fontFamily: (theme) => theme.typography.fontFamily,
@@ -21,5 +25,6 @@ export function FooterLinks ({
     fontSize: pxToRem(16),
     lineHeight: "16px",
    }}
-   >{link}</StyledLink>
+   onClick={onClick}
+   >{link}</Box>
 }
