@@ -6,6 +6,7 @@ import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
 import { ButtonGroup } from "@/ui/modules/components/CarouselCustomComponent";
 import xkartImg from './ui/assets/images/xkart.jpg';
+import sparkImg from './ui/assets/images/spark.jpg';
 
 const data = [
   {
@@ -16,7 +17,7 @@ const data = [
   {
     name: "Spark by Civicnexa Digital Solutions",
     link: "#",
-    img: "",
+    img: sparkImg,
   },
 ]
 

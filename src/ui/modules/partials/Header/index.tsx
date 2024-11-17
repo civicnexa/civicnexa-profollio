@@ -17,8 +17,9 @@ import { AppLogo } from '../../components/AppLogo';
 import { CustomStack } from '../../components/CustomStack';
 import { AppButton } from '../../components/AppButton';
 import CloseIcon from '@mui/icons-material/Close';
-import { alpha, useTheme } from '@mui/material';
+import { alpha, Stack, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
+import Grid from "@mui/material/Grid2"
 
 interface Props {
   /**
@@ -48,23 +49,26 @@ export function Header(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} 
-     sx={{ 
-      textAlign: 'center',
-      background: "primary.main" 
-    }}
+    <Stack onClick={handleDrawerToggle} 
+      sx={{ 
+        textAlign: 'center',
+        background: theme.palette.primary.main,
+        padding: "20px 16px"
+      }}
     >
         <AppLogo />
       <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <StyledLink href="#" sx={{ textAlign: 'center' }}>
-                <ListItemText primary={item} />
-            </StyledLink>
+        {navItems.map((item, index) => (
+          <ListItem key={item} component={motion.li} disablePadding onClick={() => scrollToSection(`section${index + 1}`)}
+          sx={{ 
+            color: theme.palette.background.default
+          }}
+          >
+            <ListItemText primary={item} />
           </ListItem>
         ))}
       </List>
-    </Box>
+    </Stack>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -85,7 +89,7 @@ export function Header(props: Props) {
            sx={{
             width: '100%',
             margin: {
-              xxs: 0,
+              xxs: "0 0 0 16px",
               xs: '0 50px',
               md: "0 70px",
               lg: "0 100px",
@@ -114,17 +118,7 @@ export function Header(props: Props) {
                   cursor: "pointer"
                 }}
                >
-                {/* <StyledLink
-                 href={""} 
-                 sx={{ 
-                  color: (theme) => theme.palette.secondary.main,
-                  mx: 1,
-                  "&:hover": {
-                    color: alpha(theme.palette.background.default, .9),
-                  },
-                }}> */}
                   {item}
-                {/* </StyledLink> */}
                 </Box>
               ))}
             </Box>
@@ -166,11 +160,23 @@ export function Header(props: Props) {
           }}
           sx={{
             display: { xxs: 'block', xs: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-            background: "primary.main"
+            '& .MuiDrawer-paper': { 
+              boxSizing: 'border-box', 
+              width: drawerWidth,
+              background: theme.palette.primary.main ,
+              padding: "16px",
+              display: "flex",
+              flexDirection: "column"
+            },
           }}
         >
-          <CloseIcon onClick={handleDrawerToggle}/>
+          <CloseIcon 
+           onClick={handleDrawerToggle}
+           sx={{
+            color: theme.palette.background.default,
+            alignSelf: "end"
+           }}
+          />
           {drawer}
         </Drawer>
       </nav>

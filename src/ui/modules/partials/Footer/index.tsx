@@ -21,9 +21,8 @@ export function Footer () {
             sx={{
                 maxWidth: '100%',
                 padding: {
-                    md: '30px 100px',
-                    // md:'60px',
-                    xxs:'50px 20px'
+                    xxs: "50px 0",
+                    md: "100px"
                 },
                 background: (theme) => theme.palette.primary.main,
                 color: (theme) => theme.palette.background.default,

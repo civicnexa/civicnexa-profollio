@@ -74,7 +74,9 @@ export function ServiceSection() {
             sm: "50px",
             md: "100px",
           },
-          width: '100%', // Ensure this spans the full width of the parent container
+          width: '100%',
+          maxWidth: "1200px",
+          marginX: "auto"
     
         }}
       >
