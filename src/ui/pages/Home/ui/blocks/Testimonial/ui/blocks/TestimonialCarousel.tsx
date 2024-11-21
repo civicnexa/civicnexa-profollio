@@ -57,18 +57,23 @@ export function TestimonialCarousel() {
         removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
         customButtonGroup={<ButtonGroup next={handleNext} previous={handlePrevious} sx={{  position: "absolute",
            top: {
-                xxs:'-20%',
-           md:'35%'
+            xxs:'-45%',
+            sm: "-50%",
+            md:'35%'
            },
            right: {
-               md:'8%',
-               xxs:'-25%'
+            xxs: "-40%",
+            sm: "-45%",
+            md:'8%',
            },
            height: "100px",
            display: "flex",
            alignItems: "center",
            justifyContent:{md:'space-between',xxs:'center'},
-           gap: 4,
+           gap: {
+            xxs: 2,
+            xs: 4,
+           },
            width:'100%',
          
          }} goToSlide={handleGoToSlide} carouselState={carouselState}  />}
@@ -78,11 +83,10 @@ export function TestimonialCarousel() {
           <Box
             key={index}
             sx={{
-              width: '100%', // Make the card occupy full width
+              width: '100%',
               height:'100%',
               display: 'flex',
-              justifyContent: 'center', // Center the card
-              padding: 2, // Add padding around the card
+              justifyContent: 'center',
             }}
           >
             <CardComponent />

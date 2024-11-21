@@ -4,7 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import { useTheme } from '@mui/material';
+import { Typography, useTheme } from '@mui/material';
 
 
 interface AccordionComponentProps {
@@ -43,11 +43,14 @@ const AccordionComponent:React.FC<AccordionComponentProps> = ({
           padding:'0',
           fontWeight: 'bold',
           fontSize: '18px',
+          display: "flex",
+          alignItems: "center",
+          marginRight: "10px"
         }}
       >
-        <span style={{ fontSize: '12px', marginBottom: '4px', marginRight: '6px', color: theme.accordion.accordionTextColor }}>
-          {formatIndex(index)}.
-        </span>
+        <Typography component={"span"} style={{ fontSize: '12px', marginBottom: '4px', marginRight: '10px', color: theme.accordion.accordionTextColor }}>
+          {formatIndex(index)}
+        </Typography>
         {summaryText}
       </AccordionSummary>
       <AccordionDetails sx={{  color: theme.accordion.accordionTextColor }}>

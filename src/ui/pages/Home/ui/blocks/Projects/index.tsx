@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { PageSubtitles } from "../../components";
-import { CardComponent } from "./ui/components";
+import { CardComponent, CardProject } from "./ui/components";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import React, { useState } from "react";
@@ -82,12 +82,12 @@ export function Projects() {
              removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
              customButtonGroup={<ButtonGroup next={handleNext} previous={handlePrevious} sx={{  position: "absolute",
                 top: {
-                     xxs:'0%',
-                md:'10%'
+                  xxs:'0%',
+                  md:'0'
                 },
                 right: {
-                    md:'10%',
-                    xxs:'10%'
+                  xxs:'10%',
+                  md:'10%',
                 },
                 height: "100px",
                 width: "fit-content",
@@ -107,7 +107,8 @@ export function Projects() {
                       marginTop: '80px', // Add padding around the card
                     }}
                   >
-                    <CardComponent img={item.img} link={item.link} name={item.name} />
+                    {/* <CardComponent img={item.img} link={item.link} name={item.name} /> */}
+                    <CardProject img={item.img} href={item.link} name={item.name} />
                   </Box>
                 ))}
             </Carousel>
