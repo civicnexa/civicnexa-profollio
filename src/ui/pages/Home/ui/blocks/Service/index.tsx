@@ -63,7 +63,7 @@ export function ServiceSection() {
             // Add responsive adjustments if needed
           }}
         >
-          <SectionTitle title="We deliver customized digital solutions, blending innovations and expertise to help businesses thrive in today’s competitive technology landscape" />
+          <SectionTitle title="We deliver customized digital solutions, blending innovations and expertise to help businesses thrive in today's competitive technology landscape" />
         </Box>
       </Grid>
      

@@ -82,7 +82,7 @@ export function TeamCarousel() {
   };
 
 return (
-  <Box>
+  <Box sx={{ position: "relative" }}>
      <Carousel responsive={responsive} 
       ssr={true} 
       infinite={true}
@@ -95,8 +95,8 @@ return (
       removeArrowOnDeviceType={["tablet", "mobile", "desktop"]}
       customButtonGroup={<ButtonGroup next={handleNext} previous={handlePrevious} sx={{  position: "absolute",
         top: {
-              xxs:'0',
-        md:'-40%'
+          xxs:'0',
+          md:'-30%'
         },
         right: "0",
         height: "100px",
