@@ -1,15 +1,18 @@
+"use client"
 import { AppButton, FormikAppTextField } from '@/ui/modules/components'
 import { Box, useTheme } from '@mui/material'
 import { Form, Formik, FormikHelpers, useFormikContext } from 'formik'
 import React from 'react'
 import * as Yup from 'yup';
 import { WhatButton } from './component';
+import { useSendAppMessage } from '@/common';
+import { toast } from 'react-toastify';
 
 interface SubmitValues {
   name: string;
   email: string;
   message: string;
-  service: string;
+  subject: string;
 }
 
 const data = [
@@ -22,20 +25,20 @@ const data = [
 ];
 
 const InputSchema = Yup.object().shape({
-  service: Yup.string().required("Please choose a service you want us to help you with"),
+  // subject: Yup.string().required("Please choose a service you want us to help you with"),
   name: Yup.string().required("Please provide us your name"),
   email: Yup.string().email("Please enter a valid email").required("please provide us your Email"),
   message: Yup.string().required("What do you need?")
 });
 
 export const SendButton = () => {
-  const { isValid, dirty, isSubmitting } = useFormikContext();
+  const { isSubmitting } = useFormikContext();
   const theme = useTheme();
   return (
     <AppButton 
       type="submit"
-      // disabled={!isValid || !dirty || isSubmitting}
-      // isLoading={isSubmitting}
+      disabled={isSubmitting}
+      isLoading={isSubmitting}
     sx={{border:`1px solid ${theme.accordion.accordionTextColor}`, borderRadius:'25px', marginTop:'24px', cursor:'pointer', marginLeft:'15px',  backgroundColor: (theme) => theme.contact.contactBtn, color: (theme) => theme.palette.background.default,
     transition: 'background-color 0.3s',
     '&:hover': {
@@ -46,19 +49,28 @@ export const SendButton = () => {
 };
 
 export default function InputUsage() {
+  const { sendUsMessage } = useSendAppMessage();
+  const theme = useTheme();
 
   const initialValues = {
     name: "",
     email: "",
     message: "",
-    service: "",
+    subject: "",
   }
-  const handleSubmit = (
+  const handleSubmit = async(
     values: SubmitValues,
     { setSubmitting }: FormikHelpers<SubmitValues>
   ) => {
-    // setSubmitting(true);
-    console.log("values", values);
+    setSubmitting(true);
+    // console.log("values", values);
+    try {
+      await sendUsMessage(values);
+      setSubmitting(false);
+    }catch(err) {
+      setSubmitting(false);
+      console.log("An Error occured", err);
+    }
   }
 
   return (
@@ -111,6 +123,15 @@ export default function InputUsage() {
         />
         <Box sx={{width:'100%', display:'flex', alignItems:'flex-end',justifyContent:'flex-end'}}>
           <SendButton />
+          {/* <AppButton
+           type='submit'
+           sx={{border:`1px solid ${theme.accordion.accordionTextColor}`, borderRadius:'25px', marginTop:'24px', cursor:'pointer', marginLeft:'15px',  backgroundColor: (theme) => theme.contact.contactBtn, color: (theme) => theme.palette.background.default,
+           transition: 'background-color 0.3s',
+           '&:hover': {
+             backgroundColor: 'transparent ',
+             color:  (theme) => theme.contact.contactBtn,
+           },}}
+          >Send</AppButton> */}
         </Box>
       </Form>
     </Formik>
