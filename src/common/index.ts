@@ -1,1 +1,1 @@
-// so this folder can go to the remote repository
+export * from "./hooks";
