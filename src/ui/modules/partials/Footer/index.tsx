@@ -29,6 +29,8 @@ export function Footer () {
             justifyContent="space-between"
             sx={{
                 maxWidth: '100%',
+                overflow:'hidden',
+                
                 padding: {
                     xxs: "50px 16px",
                     md: "100px"
@@ -39,7 +41,7 @@ export function Footer () {
                
             }}
         >
-            <Grid size={{md :5}} alignSelf={"start"}>
+            <Grid size={{md: 5}} alignSelf={"start"}>
                 <StyledLink href="/">
                     <CustomStack spacing={1.5} alignItems={"center"}>
                         <AppLogo />

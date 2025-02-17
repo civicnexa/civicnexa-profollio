@@ -20,7 +20,7 @@ export const Layout = ({
         <Box
         sx={{
           overflow: "hidden",
-          minWidth: "100vw",
+          maxWidth: "100vw",
           minHeight: '100vh',
           paddingBottom: "100px",
         }}
