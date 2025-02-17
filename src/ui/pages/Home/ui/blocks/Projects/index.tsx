@@ -93,6 +93,7 @@ export function Projects() {
                 width: "fit-content",
                 display: "flex",
                 alignItems: "center",
+              
                 gap: 4,
                 marginTop:'30px'
               }} goToSlide={handleGoToSlide} carouselState={carouselState}  />}
@@ -105,6 +106,7 @@ export function Projects() {
                       width: '100%', // Make the card occupy full width
                       height:'100%',
                       marginTop: '80px', // Add padding around the card
+                   
                     }}
                   >
                     {/* <CardComponent img={item.img} link={item.link} name={item.name} /> */}
