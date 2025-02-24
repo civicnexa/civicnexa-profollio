@@ -6,7 +6,6 @@ import React from 'react'
 import * as Yup from 'yup';
 import { WhatButton } from './component';
 import { useSendAppMessage } from '@/common';
-import { toast } from 'react-toastify';
 
 interface SubmitValues {
   name: string;
