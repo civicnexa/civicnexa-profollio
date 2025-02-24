@@ -6,6 +6,7 @@ import { CustomStack } from '@/ui/modules/components/CustomStack';
 import { AppButton, StyledImage, StyledLink } from '@/ui/modules/components';
 import { ArrowForward } from '@mui/icons-material';
 import { pxToRem } from '@/common/utils';
+import { Avatar } from '@mui/material';
 
 type CardComponentProps = {
     name: string;
@@ -29,7 +30,8 @@ export function CardProject({
                     fontFamily: (theme) => theme.typography.fontFamily,
                 }}
             >
-                <StyledImage src={img} alt={name}  sx={{ width: "100%", height: "200px",  margin: "auto" }} />
+                <Avatar src={img.src} alt={name}  sx={{ width: "100%", height: "200px",  margin: "auto", borderRadius: 0 }} />
+                {/* <StyledImage src={img} alt={name}  sx={{ width: "100%", height: "200px",  margin: "auto" }} /> */}
                 <CustomStack>
                     <CardContent>
                         <StyledLink

@@ -89,7 +89,7 @@ export default function InputUsage() {
           }}
         >
           {data.map((item, index) => (
-            <WhatButton text={item.text} key={index} value={item.text} />
+            <WhatButton text={item.text} key={index} value={item.value} />
           ))}
         </Box>
         <FormikAppTextField
