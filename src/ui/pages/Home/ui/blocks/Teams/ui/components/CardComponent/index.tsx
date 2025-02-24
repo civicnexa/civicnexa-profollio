@@ -4,19 +4,23 @@ import Typography from '@mui/material/Typography';
 import { CustomStack } from '@/ui/modules/components/CustomStack';
 import teamImg from '../../assets/images/team-img.jpeg';
 import { StyledImage, StyledLink } from '@/ui/modules/components';
-import { Box } from '@mui/material';
+// import { Box } from '@mui/material';
 import { pxToRem } from '@/common/utils';
+import { StaticImageData } from 'next/image';
+import { Box } from '@mui/material';
 
 type CardComponentProps = {
     name: string;
     position: string;
     href?: string;
+    image?: StaticImageData
 };
 
 export function CardComponent({
     name,
     position,
-    href
+    href, 
+    image
 }: CardComponentProps) {
     return (
         
@@ -27,20 +31,21 @@ export function CardComponent({
                         md: 405,
                     },
                     fontFamily: (theme) => theme.typography.fontFamily,
+                 
                 }}
             >
-                {/* <Box
+                <Box
                 sx={{
                     width: "100%",
-                    height: "200px",
+                    height: "300px",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     gap:'10px'
                 }}
-                > */}
-                    <StyledImage src={teamImg} alt={name}  sx={{ width: "100%", height: "100%",  margin: "auto" }} />
-                {/* </Box> */}
+                >
+                    <StyledImage src={image || teamImg} alt={name}  sx={{ width: "100%", height: "100%",  margin: "auto" }} />
+                </Box>
                 <CustomStack>
                     <CardContent>
                         <StyledLink
